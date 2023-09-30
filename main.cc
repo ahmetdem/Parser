@@ -20,6 +20,11 @@ int main(int argc, char const *argv[])
     parser.add_custom_option(sayOption);
     parser.add_custom_option(removeOption);
     
+    
+    CommandLineParser::ShortFlag noneFlag {"-n", fs::copy_options::none};
+    parser.add_custom_flag(noneFlag);
+
+    
     parser.parse(argc, argv);
 
     return 0;

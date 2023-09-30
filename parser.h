@@ -39,14 +39,10 @@ public:
     }
 
     /* add option to add shortflags to sFlags */
-
+    void add_custom_flag(const ShortFlag flag) { sFlags.push_back( flag ); }
 
     /* Option to add custom functions. */
-    void add_custom_option(Option& option) {
-
-        options.push_back(option);
-
-    }
+    void add_custom_option(const Option& option) { options.push_back(option); }
     
 
     // Method to parse command-line arguments and execute associated functions

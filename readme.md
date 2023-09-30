@@ -61,6 +61,30 @@ int main(int argc, char const *argv[])
 ./my_script say Hello!
 ```
 
+## Adding custom Flags
+To add a custom flag, use the add_custom_flag() function. The function takes an flag object as an argument. The flag object must have the following fields:
+
+- ```name```: The name of the flag.
+- ```OptionRef```: The option to pass to copy() 
+
+To add a custom flag, simply define a shortFlag and pass it to the add_custom_flag().
+
+#### Example:
+
+```cpp
+    int main(int argc, char const *argv[]) 
+    {
+        CommandLineParser parser;
+
+        CommandLineParser::ShortFlag noneFlag {"-n", fs::copy_options::none};
+        parser.add_custom_flag(noneFlag);
+    }
+```
+
+```bash
+./my_script -n copy "source" "destination"
+```
+
 ## Building and Running
 
 To build the script, run the following command:
