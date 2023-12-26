@@ -1,6 +1,6 @@
 # A simple command-line parser for C++
 
-This script provides a simple command-line parser for C++ applications. It allows you to define options and functions to be executed when those options are parsed.
+This script provides a simple command-line parser for C++ applications. It allows you to define options and functions to be executed when those options are parsed. (Options Only Work for Copy Function as of Now.)
 
 ## Usage
 
