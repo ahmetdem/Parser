@@ -60,26 +60,6 @@ public:
                 } else { throw std::runtime_error("Unidentified Flag(s)."); }
             }
         
-            // if (argv[i] == copyOption.name) {
-            //     try
-            //     {
-            //         from = argv[i+1];
-            //         to = argv[i+2] + stripLastWord(from);
-
-            //     } catch(const std::exception& e) {std::cerr << e.what() << '\n';}
-
-            //     copyOption.function();
-
-            //     break;
-            // } 
-            // else if ( argv[i][0] != '-' ) 
-            // { 
-            //     std::cout << argv[i] << std::endl;
-            //     OptionFromName(argv[i]).function() ;
-            // }  
-            // else if ( strncmp(argv[i], "--", 2) == 0 )
-            //     OptionFromName(argv[i]).function() ;
-
             if (argv[i] == copyOption.name)
             {
                 try {
@@ -102,8 +82,6 @@ public:
                     op.function();
                 }
             }
-            
-            
         }
     }
 
@@ -169,12 +147,9 @@ private:
 
         for (const ShortFlag& flag : usedFlags) {
             combinedOptions |= flag.optionRef;
-            // std::cout << flag.name << std::endl;
         }
-        // std::cout << from << std::endl;
-        // std::cout << to << std::endl;
+
         fs::copy(from, to, combinedOptions);
-        // std::cout << "Copying is successfull." << std::endl;
     }
 
     Option copyOption { "copy", "copy files or directories", [this]() { copyFiles(); }} ;

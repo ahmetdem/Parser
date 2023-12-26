@@ -1,4 +1,4 @@
-#include "parser.h"
+#include "../include/parser.h"
 
 void say(const std::string key) {
     std::cout << key << std::endl;
